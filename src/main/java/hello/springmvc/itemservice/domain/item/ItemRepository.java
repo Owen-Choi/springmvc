@@ -13,7 +13,7 @@ public class ItemRepository {
     // 만약 실무라면 HashMap을 쓰면 안되고 ConcurrentHashMap을 써야한다. @Repository 애노테이션으로 인해 싱글톤이 되기 때문에
     // 동시접근 이슈가 발생할 수 있음
     private static final Map<Long, Item> store = new HashMap<>();
-    private static long sequence = 0L;
+    private static long sequence = 1L;
 
     public Item save(Item item) {
         item.setId(sequence++);
